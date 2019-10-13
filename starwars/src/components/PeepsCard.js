@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Pulse = styled.div`
   transition: transform 0.2s ease-in;
   background: #cacfd2;
-  color: #b05b33;
+  color: #4b7fad;
   width: 230px;
   max-height: 350px;
   display: flex;
@@ -28,12 +28,8 @@ const PeepsCard = props => {
     return (
         <Pulse className="peeps-list">
             <h2>{props.name}</h2>
-            {/* <p>{props.homeWorld}</p> */}
             <TextColor>Birth Year: {props.birthYear}</TextColor>
             <TextColor>{props.gender}</TextColor>
-            
-
-
         </Pulse>
     )
 }

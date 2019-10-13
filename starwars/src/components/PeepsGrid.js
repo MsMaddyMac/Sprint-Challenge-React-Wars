@@ -7,7 +7,7 @@ const Cards = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    
+    margin-top: 50px;
 `;
 
 export default function PeepsList() {
@@ -22,7 +22,7 @@ export default function PeepsList() {
             setPeeps(response.data.results);
         })
         .catch(error => {
-            console.log('Sorry, no peeps here!', error);
+            console.log("Sorry, no peeps here!", error);
         });
     }, []);
 
@@ -35,7 +35,6 @@ export default function PeepsList() {
                     key={peep.url}
                     name={peep.name}
                     gender={peep.gender}
-                    // homeWorld={peep.homeworld.name}
                     birthYear={peep.birth_year}
                     />
                 );
