@@ -12,6 +12,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <h2> Meet the Star Wars Peeps</h2>
     </div>
   );
 }
