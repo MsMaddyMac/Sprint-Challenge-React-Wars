@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PeepsCard from "./PeepsCard";
+import styled from "styled-components";
+
+const Cards = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+`;
 
 export default function PeepsList() {
     const [peeps, setPeeps] = useState([]);
@@ -20,7 +28,7 @@ export default function PeepsList() {
 
     return (
         
-        <div className="peep">
+        <Cards className="peep">
             {peeps.map(peep => {
                 return (
                     <PeepsCard 
@@ -32,6 +40,6 @@ export default function PeepsList() {
                     />
                 );
             })}
-        </div>
+        </Cards>
     );
 }

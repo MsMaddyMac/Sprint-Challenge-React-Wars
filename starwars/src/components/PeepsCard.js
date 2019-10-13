@@ -1,16 +1,40 @@
 import React from "react";
+import styled from "styled-components";
+
+const Pulse = styled.div`
+  transition: transform 0.2s ease-in;
+  background: #cacfd2;
+  color: #b05b33;
+  width: 230px;
+  max-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0px 1px 6px -2px grey;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+  }
+`;
+
+const TextColor = styled.p`
+  color: black;
+`;
 
 const PeepsCard = props => {
     return (
-        <div className="peeps-list">
+        <Pulse className="peeps-list">
             <h2>{props.name}</h2>
-            <p>{props.gender}</p>
             {/* <p>{props.homeWorld}</p> */}
-            <p>Birth Year: {props.birthYear}</p>
+            <TextColor>Birth Year: {props.birthYear}</TextColor>
+            <TextColor>{props.gender}</TextColor>
             
 
 
-        </div>
+        </Pulse>
     )
 }
 

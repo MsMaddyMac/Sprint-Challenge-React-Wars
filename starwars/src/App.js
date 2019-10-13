@@ -1,6 +1,17 @@
 import React from 'react';
 import './App.css';
-import PeepsList from "./components/PeepsList";
+import PeepsGrid from "./components/PeepsGrid";
+import styled from "styled-components";
+
+const MainContainer = styled.div`
+  width: 100%
+  max-width: 850px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -12,9 +23,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
-      <h2> Meet the Star Wars Peeps</h2>
-      <PeepsList />
+      <MainContainer className="container">
+        <h1 className="Header">React Wars</h1>
+        <h2> Meet the Star Wars Peeps</h2>
+        <PeepsGrid />
+      </MainContainer>
     </div>
   );
 }
