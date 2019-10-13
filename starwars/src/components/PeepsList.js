@@ -26,6 +26,8 @@ export default function PeepsList() {
                     <PeepsCard 
                     key={peep.url}
                     name={peep.name}
+                    gender={peep.gender}
+                    // homeWorld={peep.homeworld.name}
                     birthYear={peep.birth_year}
                     />
                 );
