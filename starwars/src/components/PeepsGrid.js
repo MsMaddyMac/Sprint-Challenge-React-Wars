@@ -29,10 +29,10 @@ export default function PeepsList() {
     return (
         
         <Cards className="peep">
-            {peeps.map(peep => {
+            {peeps.map((peep, index) => {
                 return (
                     <PeepsCard 
-                    key={peep.url}
+                    key={index}
                     name={peep.name}
                     gender={peep.gender}
                     birthYear={peep.birth_year}
