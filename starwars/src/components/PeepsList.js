@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import PeepsCard from "./PeepsCard";
+import PeepsCard from "./PeepsCard";
 
 export default function PeepsList() {
     const [peeps, setPeeps] = useState([]);
@@ -9,8 +9,8 @@ export default function PeepsList() {
         axios
         .get (`https://swapi.co/api/people/`)
         .then(response => {
-            console.log(response.data);
-            setPeeps(response.data);
+            console.log(response.data.results);
+            setPeeps(response.data.results);
         })
         .catch(error => {
             console.log('Sorry, no peeps here!', error);
@@ -20,12 +20,14 @@ export default function PeepsList() {
     return (
         
         <div className="peep">
-            {peeps.map(peep => {
+            {peeps.map((peeps, index) => {
                 return (
                     <PeepsCard 
-                    homeworld={peep.homeworld}
-                    birthYear={peep.birth_year}
-                    species={peep.species}
+                    key={index}
+                    name={peeps.name}
+                    // homeworld={peep.homeworld}
+                    // birthYear={peep.birth_year}
+                    // species={peep.species}
                     />
                 );
             })}
