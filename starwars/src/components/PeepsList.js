@@ -4,6 +4,7 @@ import PeepsCard from "./PeepsCard";
 
 export default function PeepsList() {
     const [peeps, setPeeps] = useState([]);
+    
 
     useEffect(() => {
         axios
@@ -20,14 +21,12 @@ export default function PeepsList() {
     return (
         
         <div className="peep">
-            {peeps.map((peeps, index) => {
+            {peeps.map(peep => {
                 return (
                     <PeepsCard 
-                    key={index}
-                    name={peeps.name}
-                    // homeworld={peep.homeworld}
-                    // birthYear={peep.birth_year}
-                    // species={peep.species}
+                    key={peep.url}
+                    name={peep.name}
+                    birthYear={peep.birth_year}
                     />
                 );
             })}
