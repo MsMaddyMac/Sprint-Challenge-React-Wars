@@ -1,5 +1,28 @@
 import React from 'react';
 import './App.css';
+import PeepsGrid from "./components/PeepsGrid";
+import styled from "styled-components";
+
+const MainContainer = styled.div`
+  width: 100%
+  max-width: 850px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+`;
+
+const H1 = styled.h1`
+  color: #b05b33;
+  font-size: 45px;
+`;
+
+const H2 = styled.h2`
+  font-family: 'Permanent Marker', cursive;
+  font-size: 35px; 
+  margin-top: 1px;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -11,7 +34,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <MainContainer className="container">
+        <H1 className="Header">React Wars</H1>
+        <H2> Meet the Star Wars Peeps</H2>
+        <PeepsGrid />
+      </MainContainer>
     </div>
   );
 }
